@@ -3,10 +3,15 @@ package main
 import (
 	"log"
 	"net/http"
+	"net/url"
 )
 
 func main() {
-	resp, err := http.Head("http://localhost:18888")
+	values := url.Values{
+		"test": {"value"},
+	}
+
+	resp, err := http.PostForm("http://localhost:18888", values)
 	if err != nil {
 		panic(err)
 	}
