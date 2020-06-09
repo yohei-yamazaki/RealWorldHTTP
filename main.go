@@ -17,7 +17,7 @@ func main() {
 			Proxy: http.ProxyURL(proxyUrl),
 		},
 	}
-	resp, err := client.Get("http://github.com")
+	resp, err := client.Get("http://user:password@github.com")
 	if err != nil {
 		panic(err)
 	}
